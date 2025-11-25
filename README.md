@@ -1,1 +1,0 @@
-# esadyc_web
