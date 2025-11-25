@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESADyC - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header con banner, logo y buscador -->
+    <header class="position-relative">
+        <!-- Banner con curvas de colores -->
+        <div class="position-relative">
+            <img
+                src="assets/images/header-curves.svg"
+                alt="Curvas de colores"
+                class="img-fluid w-100"
+                style="height: 150px; object-fit: cover"
+            />
+
+            <!-- Logo y buscador para Desktop/Tablet -->
+            <div class="d-none d-md-block">
+                <!-- Logo -->
+                <div class="position-absolute top-0 start-0 m-4 ms-5" style="margin-left: 4rem !important;">
+                    <div class="d-flex align-items-center">
+                        <img
+                            src="assets/images/logo.svg"
+                            alt="ESADyC Logo"
+                            height="110"
+                            class="me-2"
+                        />
+                    </div>
+                </div>
+
+                <!-- Buscador -->
+                <div class="position-absolute top-50 end-0 m-4" style="transform: translateY(-50%)">
+                    <div class="input-group" style="width: 250px">
+                        <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            placeholder="Buscar en el sitio..."
+                        />
+                        <button class="btn btn-light btn-sm" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo y buscador para móvil -->
+            <div class="d-md-none">
+                <!-- Logo centrado -->
+                <div class="position-absolute top-0 start-50 translate-middle-x mt-3">
+                    <img src="assets/images/logo.svg" alt="ESADyC Logo" height="80" />
+                </div>
+
+                <!-- Buscador expandible -->
+                <div class="position-absolute top-100 start-50 translate-middle-x mt-4">
+                    <div class="input-group input-group-sm">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Buscar en el sitio..."
+                            id="mobile-search-input"
+                            style="display: none;"
+                        />
+                        <button class="btn btn-light" type="button" id="mobile-search-toggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegación principal -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0d6efd">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto" style="gap: 2.5rem">
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold fs-5" href="index.html">INICIO</a>
+                        </li>
+                        
+                        <!-- Menú Institucional -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold fs-5" href="#" role="button" data-bs-toggle="dropdown">
+                                INSTITUCIONAL
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="frontend/institucional/historia.html">HISTORIA</a></li>
+                                <li><a class="dropdown-item" href="frontend/institucional/autoridades.html">AUTORIDADES</a></li>
+                                <li><a class="dropdown-item" href="frontend/institucional/normativa.html">NORMATIVA</a></li>
+                                <li><a class="dropdown-item" href="frontend/institucional/personal.html">PERSONAL</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Menú Publicaciones -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold fs-5" href="#" role="button" data-bs-toggle="dropdown">
+                                PUBLICACIONES
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="frontend/publicaciones/actividades.html">ACTIVIDADES</a></li>
+                                <li><a class="dropdown-item" href="frontend/publicaciones/comunicacion-publica.html">COMUNICACIÓN PÚBLICA</a></li>
+                                <li><a class="dropdown-item" href="frontend/publicaciones/proyectos.html">PROYECTOS</a></li>
+                                <li><a class="dropdown-item" href="frontend/publicaciones/personal.html">PERSONAL</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="frontend/noticias.html">NOTICIAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="frontend/programas.html">PROGRAMAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="frontend/contactos.html">CONTACTOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carrusel de Imágenes -->
+    <section class="container bg-secondary bg-opacity-50 rounded-3 py-4 my-4 mx-auto" style="width: 88%;">
+        <div id="carouselESADyC" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carrusel-container">
+                <!-- Las imágenes se cargarán dinámicamente aquí -->
+            </div>
+            
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev position-absolute" type="button" data-bs-target="#carouselESADyC" data-bs-slide="prev" style="left: -50px;">
+                <span class="d-inline-block bg-primary bg-opacity-25 p-3 rounded-3" 
+                      style="width: 0; height: 0; border-top: 18px solid transparent; border-bottom: 18px solid transparent; border-right: 22px solid #0d6efd;">
+                </span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+
+            <button class="carousel-control-next position-absolute" type="button" data-bs-target="#carouselESADyC" data-bs-slide="next" style="right: -50px;">
+                <span class="d-inline-block bg-primary bg-opacity-25 p-3 rounded-3" 
+                      style="width: 0; height: 0; border-top: 18px solid transparent; border-bottom: 18px solid transparent; border-left: 22px solid #0d6efd;">
+                </span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+    
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <!-- Evento Destacado -->
+        <section class="row mb-5">
+            <div class="col-12">
+                <div class="card border-0 shadow-lg bg-gradient-primary text-white" style="background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);">
+                    <div class="card-body text-center p-5">
+                        <h2 class="card-title display-6 fw-bold mb-4">
+                            2ª Jornadas Universitarias Patagónicas de Educación en Contextos de Encierro
+                        </h2>
+                        <p class="card-text fs-4 mb-2">11 y 12 SEPTIEMBRE 2025</p>
+                        <p class="card-text fs-5 fw-semibold opacity-90">MODALIDAD VIRTUAL</p>
+                        <button class="btn btn-light btn-lg mt-3 fw-bold px-4">Más Información</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Noticias Destacadas -->
+        <section class="row mb-5">
+            <div class="col-12 mb-4">
+                <h3 class="fw-bold text-primary mb-3 pb-2 border-bottom border-3 border-primary d-inline-block">ÚLTIMAS NOTICIAS</h3>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h5 class="card-title mb-0 fw-bold">7 de Octubre</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Científica del ESADYC desarrollan sistemas de Inteligencia
+                            Artificial para monitorear sonidos en tiempo real. Lo más
+                            destacado será la implementación de drones que verifiquen
+                            charlas.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h5 class="card-title mb-0 fw-bold">15 de Noviembre</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Científica del ESADYC desarrollan sistemas de Inteligencia
+                            Artificial para monitorear sonidos en tiempo real. Lo más
+                            destacado será la implementación de drones que verifiquen
+                            charlas.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h5 class="card-title mb-0 fw-bold">23 de Noviembre</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            La Red ESADYC invita a participar esta semana del VIII EITICE
+                            Encuentro Internacional de Estudios. La Red ESADYC invita a
+                            participar esta semana del VIII EITICE Encuentro Internacional
+                            de Estudios.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programas Destacados -->
+        <section class="row">
+            <div class="col-12 mb-4">
+                <h3 class="fw-bold text-primary mb-3 pb-2 border-bottom border-3 border-primary d-inline-block">PROGRAMAS DESTACADOS</h3>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-balance-scale text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-primary fw-bold mb-0">Ciencia y Justicia</h5>
+                        </div>
+                        <p class="card-text text-muted">
+                            Programa de vinculación entre la ciencia y el sistema judicial para fortalecer 
+                            la administración de justicia a través del conocimiento científico.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">Conocer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-microphone text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-primary fw-bold mb-0">VocAr</h5>
+                        </div>
+                        <p class="card-text text-muted">
+                            Programa de promoción de las vocaciones científicas dirigido a jóvenes 
+                            estudiantes interesados en desarrollar carreras en investigación.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">Conocer más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Columna INSTITUCIONAL -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-building me-2"></i>INSTITUCIONAL
+                    </h5>
+                    <p class="fw-bold mb-2 text-light">
+                        <i class="fas fa-info-circle me-2 text-secondary"></i>Acerca del ESADYC
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-user-tie me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Autoridades</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-gavel me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Normativa</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-network-wired me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Red Institucional</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chart-bar me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Evaluación</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-user-md me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Investigador/a</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-hands-helping me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Personal de Apoyo</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-user-graduate me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Becario/a</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-briefcase me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Administrativo/a</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna DESARROLLO CYT -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-flask me-2"></i>DESARROLLO CYT
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-project-diagram me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Proyectos I+D</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-tasks me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Actividades de apoyo a la I+D</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-handshake me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Convenios</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-file-alt me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Solicitud colecta científica</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-sitemap me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Redes Orientadas (RIOSP)</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-database me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Repositorios</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-users me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Redes Disciplinares</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-ship me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Bugues Oceanográficos</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna CONVOCATORIAS y PROGRAMAS -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-bullhorn me-2"></i>CONVOCATORIAS
+                    </h5>
+                    <h6 class="fw-bold mb-2 text-light">
+                        <i class="fas fa-link me-2 text-secondary"></i>VINCULACIÓN
+                    </h6>
+                    <h6 class="fw-bold mb-2 text-light">
+                        <i class="fas fa-globe-americas me-2 text-secondary"></i>COOPERACIÓN
+                    </h6>
+                    <h6 class="fw-bold mb-3 text-light border-bottom pb-2">
+                        <i class="fas fa-comments me-2 text-secondary"></i>COMUNICACIÓN
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="far fa-newspaper me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Noticias</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-bell me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Novedades</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-film me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">ESADYC Documental</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-trophy me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Premios científicos</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-calendar-alt me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Agenda ESADYC</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-video me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Audiovisual</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-lightbulb me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Iniciativas</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-heart me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Ciencia en tu vida</a>
+                        </li>
+                    </ul>
+                    
+                    <h5 class="fw-bold mt-4 mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-list-alt me-2"></i>PROGRAMAS
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-balance-scale me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Ciencia y Justicia</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-microphone me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">VocAr</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chalkboard-teacher me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Programa +VALOR.Doc</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-history me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Comisión de la Memoria</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-water me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Comisión de Ciencias del Mar</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna de contacto -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="bg-dark bg-opacity-50 p-4 rounded border border-secondary">
+                        <h6 class="fw-bold text-primary mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>CONTACTO
+                        </h6>
+                        <p class="mb-3 small">
+                            <i class="fas fa-university me-2 text-muted"></i>
+                            Seide GIOLL: Godoy Cruz 2290 (C1425FOB) CABA – República Argentina
+                        </p>
+                        <p class="mb-3 fw-bold text-light">
+                            <i class="fas fa-envelope me-2 text-muted"></i>
+                            infoesadyc@gmail.com
+                        </p>
+
+                        <!-- Redes sociales -->
+                        <div class="mt-4 pt-3 border-top border-secondary">
+                            <h6 class="fw-bold text-light mb-3">SÍGUENOS</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="text-primary fs-5">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="text-info fs-5">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="text-danger fs-5">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="text-primary fs-5">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-warning fs-5">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Línea divisoria -->
+            <hr class="my-4 border-secondary">
+            
+            <!-- Información de licencia -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-3 bg-dark bg-opacity-25 rounded border border-secondary text-center">
+                        <p class="mb-0 small">
+                            <i class="fab fa-creative-commons me-2 text-primary"></i>
+                            <strong>Los contenidos del ESADYC están licenciados bajo Creative Commons Reconocimiento 2.5 Argentina License</strong>
+                            <i class="fab fa-creative-commons-by ms-2 text-primary"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para el buscador móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchToggle = document.getElementById('mobile-search-toggle');
+            const searchInput = document.getElementById('mobile-search-input');
+            
+            if (searchToggle && searchInput) {
+                searchToggle.addEventListener('click', function() {
+                    if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+                        searchInput.style.display = 'block';
+                        searchInput.focus();
+                    } else {
+                        searchInput.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

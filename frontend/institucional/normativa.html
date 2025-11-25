@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESADyC - Normativa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Banner con curvas de colores, logo y buscador -->
+    <!-- Banner con curvas de colores -->
+        <div class="position-relative">
+            <img
+                src="/assets/images/header-curves.svg"
+                alt="Curvas de colores"
+                class="img-fluid w-100"
+                style="height: 150px; object-fit: cover"
+            />
+
+            <!-- Logo y buscador para Desktop/Tablet -->
+            <div class="d-none d-md-block">
+                <!-- Logo -->
+                <div class="position-absolute top-0 start-0 m-4 ms-5" style="margin-left: 4rem !important;">
+                    <div class="d-flex align-items-center">
+                        <img
+                            src="/assets/images/logo.svg"
+                            alt="ESADyC Logo"
+                            height="110"
+                            class="me-2"
+                        />
+                    </div>
+                </div>
+
+                <!-- Buscador -->
+                <div class="position-absolute top-50 end-0 m-4" style="transform: translateY(-50%)">
+                    <div class="input-group" style="width: 250px">
+                        <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            placeholder="Buscar en el sitio..."
+                        />
+                        <button class="btn btn-light btn-sm" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo y buscador para móvil -->
+            <div class="d-md-none">
+                <!-- Logo centrado -->
+                <div class="position-absolute top-0 start-50 translate-middle-x mt-3">
+                    <img src="/assets/images/logo.svg" alt="ESADyC Logo" height="100" />
+                </div>
+
+                <!-- Buscador expandible -->
+                <div class="position-absolute top-100 start-50 translate-middle-x mt-4">
+                    <div class="input-group input-group-sm">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Buscar en el sitio..."
+                            id="mobile-search-input"
+                            style="display: none;"
+                        />
+                        <button class="btn btn-light" type="button" id="mobile-search-toggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Header con navegación -->
+    <header>
+        <nav
+            class="navbar navbar-expand-lg navbar-dark"
+            style="background-color: #0d6efd"
+        >
+            <div class="container">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto" style="gap: 2.5rem">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="/index.html">INICIO</a>
+                        </li>
+                        
+                        <!-- Institucional con submenú -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold fs-5 active" href="#" role="button" data-bs-toggle="dropdown">
+                                INSTITUCIONAL
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/frontend/institucional/historia.html">HISTORIA</a></li>
+                                <li><a class="dropdown-item" href="/frontend/institucional/autoridades.html">AUTORIDADES</a></li>
+                                <li><a class="dropdown-item active" href="/frontend/institucional/normativa.html">NORMATIVA</a></li>
+                                <li><a class="dropdown-item" href="/frontend/institucional/personal.html">PERSONAL</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Publicaciones con submenú -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold fs-5" href="#" role="button" data-bs-toggle="dropdown">
+                                PUBLICACIONES
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/frontend/publicaciones/actividades.html">ACTIVIDADES</a></li>
+                                <li><a class="dropdown-item" href="/frontend/publicaciones/comunicacion-publica.html">COMUNICACIÓN PÚBLICA</a></li>
+                                <li><a class="dropdown-item" href="/frontend/publicaciones/proyectos.html">PROYECTOS</a></li>
+                                <li><a class="dropdown-item" href="/frontend/publicaciones/personal.html">PERSONAL</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="/frontend/noticias.html">NOTICIAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="/frontend/programas.html">PROGRAMAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="/frontend/contactos.html">CONTACTOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h1 class="fw-bold text-primary mb-3 pb-2 border-bottom border-3 border-primary d-inline-block">NORMATIVA DEL ESADyC</h1>
+            </div>
+            
+            <!-- Marco Normativo -->
+            <div class="col-12 mb-5">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h4 class="card-title mb-0 fw-bold">
+                            <i class="fas fa-gavel me-2"></i>Marco Normativo Institucional
+                        </h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="text-muted mb-4">
+                            El ESADyC se rige por un conjunto de normativas que establecen los lineamientos 
+                            para su funcionamiento, organización y desarrollo de actividades. A continuación 
+                            se detallan las principales disposiciones que regulan la institución.
+                        </p>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary fw-bold">
+                                            <i class="fas fa-file-contract me-2"></i>Estatuto Orgánico
+                                        </h5>
+                                        <p class="card-text text-muted">
+                                            Documento que establece la estructura organizacional, 
+                                            funciones y competencias del ESADyC.
+                                        </p>
+                                        <div class="mt-3">
+                                            <a href="#" class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-eye me-1"></i> Ver Online
+                                            </a>
+                                            <a href="#" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-download me-1"></i> Descargar PDF
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary fw-bold">
+                                            <i class="fas fa-balance-scale me-2"></i>Reglamento Interno
+                                        </h5>
+                                        <p class="card-text text-muted">
+                                            Normas que regulan el funcionamiento diario de la institución 
+                                            y las relaciones entre sus miembros.
+                                        </p>
+                                        <div class="mt-3">
+                                            <a href="#" class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-eye me-1"></i> Ver Online
+                                            </a>
+                                            <a href="#" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-download me-1"></i> Descargar PDF
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Normativas por Área -->
+            <div class="col-12 mb-4">
+                <h3 class="fw-bold text-primary mb-4">Normativas por Área</h3>
+            </div>
+            
+            <div class="col-12">
+                <div class="accordion" id="normativasAccordion">
+                    <!-- Investigación -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInvestigacion">
+                                <i class="fas fa-flask me-2 text-primary"></i>
+                                <strong>Investigación Científica</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseInvestigacion" class="accordion-collapse collapse show" data-bs-parent="#normativasAccordion">
+                            <div class="accordion-body">
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Reglamento de Proyectos de Investigación
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Normas de Publicación Científica
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Protocolo de Ética en Investigación
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Guía para Solicitud de Fondos
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recursos Humanos -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRRHH">
+                                <i class="fas fa-users me-2 text-primary"></i>
+                                <strong>Recursos Humanos</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseRRHH" class="accordion-collapse collapse" data-bs-parent="#normativasAccordion">
+                            <div class="accordion-body">
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Estatuto del Personal Investigador
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Reglamento de Becas y Formación
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Normas de Convivencia Institucional
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Protocolo de Prevención de Acoso
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Administración y Finanzas -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdmin">
+                                <i class="fas fa-calculator me-2 text-primary"></i>
+                                <strong>Administración y Finanzas</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseAdmin" class="accordion-collapse collapse" data-bs-parent="#normativasAccordion">
+                            <div class="accordion-body">
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Manual de Procedimientos Administrativos
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Reglamento de Compras y Contrataciones
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Normas de Gestión Presupuestaria
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Política de Viajes y Viáticos
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Infraestructura y Seguridad -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInfra">
+                                <i class="fas fa-building me-2 text-primary"></i>
+                                <strong>Infraestructura y Seguridad</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseInfra" class="accordion-collapse collapse" data-bs-parent="#normativasAccordion">
+                            <div class="accordion-body">
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Reglamento de Uso de Laboratorios
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Normas de Bioseguridad
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Protocolo de Emergencias
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        Política de Acceso a Instalaciones
+                                        <span class="badge bg-primary rounded-pill">PDF</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Documentos Recientes -->
+            <div class="col-12 mt-5">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h4 class="card-title mb-0 fw-bold">
+                            <i class="fas fa-file-alt me-2"></i>Documentos Normativos Recientes
+                        </h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Actualización del Reglamento de Propiedad Intelectual</div>
+                                    <span class="text-muted">Aprobado: 15 de Noviembre 2023</span>
+                                </div>
+                                <span class="badge bg-primary rounded-pill">Nuevo</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Protocolo para Investigación con Organismos Modificados Genéticamente</div>
+                                    <span class="text-muted">Aprobado: 2 de Octubre 2023</span>
+                                </div>
+                                <span class="badge bg-success rounded-pill">Actualizado</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Normas para la Colaboración Internacional</div>
+                                    <span class="text-muted">Aprobado: 20 de Septiembre 2023</span>
+                                </div>
+                                <span class="badge bg-success rounded-pill">Actualizado</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Reglamento de Uso de Datos y Protección de la Información</div>
+                                    <span class="text-muted">Aprobado: 5 de Agosto 2023</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Columna INSTITUCIONAL -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-building me-2"></i>INSTITUCIONAL
+                    </h5>
+                    <p class="fw-bold mb-2 text-light">
+                        <i class="fas fa-info-circle me-2 text-secondary"></i>Acerca del ESADyC
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-user-tie me-2 text-muted"></i>
+                            <a href="/frontend/institucional/autoridades.html" class="text-light text-decoration-none">Autoridades</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-gavel me-2 text-muted"></i>
+                            <a href="/frontend/institucional/normativa.html" class="text-light text-decoration-none">Normativa</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-network-wired me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Red Institucional</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chart-bar me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Evaluación</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-user-md me-2 text-muted"></i>
+                            <a href="/frontend/institucional/personal.html" class="text-light text-decoration-none">Investigador/a</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-hands-helping me-2 text-muted"></i>
+                            <a href="/frontend/institucional/personal.html" class="text-light text-decoration-none">Personal de Apoyo</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-user-graduate me-2 text-muted"></i>
+                            <a href="/frontend/institucional/personal.html" class="text-light text-decoration-none">Becario/a</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-briefcase me-2 text-muted"></i>
+                            <a href="/frontend/institucional/personal.html" class="text-light text-decoration-none">Administrativo/a</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna DESARROLLO CYT -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-flask me-2"></i>DESARROLLO CYT
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-project-diagram me-2 text-muted"></i>
+                            <a href="/frontend/publicaciones/proyectos.html" class="text-light text-decoration-none">Proyectos I+D</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-tasks me-2 text-muted"></i>
+                            <a href="/frontend/publicaciones/actividades.html" class="text-light text-decoration-none">Actividades de apoyo a la I+D</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-handshake me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Convenios</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-file-alt me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Solicitud colecta científica</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-sitemap me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Redes Orientadas (RIOSP)</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-database me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Repositorios</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-users me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Redes Disciplinares</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-ship me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Buques Oceanográficos</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna CONVOCATORIAS y PROGRAMAS -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-bullhorn me-2"></i>CONVOCATORIAS
+                    </h5>
+                    <h6 class="fw-bold mb-2 text-light">
+                        <i class="fas fa-link me-2 text-secondary"></i>VINCULACIÓN
+                    </h6>
+                    <h6 class="fw-bold mb-2 text-light">
+                        <i class="fas fa-globe-americas me-2 text-secondary"></i>COOPERACIÓN
+                    </h6>
+                    <h6 class="fw-bold mb-3 text-light border-bottom pb-2">
+                        <i class="fas fa-comments me-2 text-secondary"></i>COMUNICACIÓN
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="far fa-newspaper me-2 text-muted"></i>
+                            <a href="/frontend/noticias.html" class="text-light text-decoration-none">Noticias</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-bell me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Novedades</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-film me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">ESADyC Documental</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-trophy me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Premios científicos</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-calendar-alt me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Agenda ESADyC</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-video me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Audiovisual</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-lightbulb me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Iniciativas</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-heart me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Ciencia en tu vida</a>
+                        </li>
+                    </ul>
+                    
+                    <h5 class="fw-bold mt-4 mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-list-alt me-2"></i>PROGRAMAS
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-balance-scale me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">Ciencia y Justicia</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-microphone me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">VocAr</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chalkboard-teacher me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">Programa +VALOR.Doc</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-history me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">Comisión de la Memoria</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-water me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">Comisión de Ciencias del Mar</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna de contacto -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="bg-dark bg-opacity-50 p-4 rounded border border-secondary">
+                        <h6 class="fw-bold text-primary mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>CONTACTO
+                        </h6>
+                        <p class="mb-3 small">
+                            <i class="fas fa-university me-2 text-muted"></i>
+                            Seide GIOLL: Godoy Cruz 2290 (C1425FOB) CABA – República Argentina
+                        </p>
+                        <p class="mb-3 fw-bold text-light">
+                            <i class="fas fa-envelope me-2 text-muted"></i>
+                            infoesadyc@gmail.com
+                        </p>
+
+                        <!-- Iconos de redes sociales -->
+                        <div class="mt-4 pt-3 border-top border-secondary">
+                            <h6 class="fw-bold text-light mb-3">SÍGUENOS</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="text-primary fs-5">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="text-info fs-5">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="text-danger fs-5">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="text-primary fs-5">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-warning fs-5">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Línea divisoria -->
+            <hr class="my-4 border-secondary">
+            
+            <!-- Información de licencia con iconos -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-3 bg-dark bg-opacity-25 rounded border border-secondary text-center">
+                        <p class="mb-0 small">
+                            <i class="fab fa-creative-commons me-2 text-primary"></i>
+                            <strong>Los contenidos del ESADyC están licenciados bajo Creative Commons Reconocimiento 2.5 Argentina License</strong>
+                            <i class="fab fa-creative-commons-by ms-2 text-primary"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
