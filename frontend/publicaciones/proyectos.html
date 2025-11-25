@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESADyC - Proyectos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Banner con curvas de colores, logo y buscador -->
+    <div class="position-relative">
+        <img
+            src="/assets/images/header-curves.svg"
+            alt="Curvas de colores"
+            class="img-fluid w-100"
+            style="height: 150px; object-fit: cover"
+        />
+
+        <!-- Logo y buscador para Desktop/Tablet -->
+        <div class="d-none d-md-block">
+            <!-- Logo -->
+            <div class="position-absolute top-0 start-0 m-4 ms-5" style="margin-left: 4rem !important;">
+                <div class="d-flex align-items-center">
+                    <img
+                        src="/assets/images/logo.svg"
+                        alt="ESADyC Logo"
+                        height="110"
+                        class="me-2"
+                    />
+                </div>
+            </div>
+
+            <!-- Buscador -->
+            <div class="position-absolute top-50 end-0 m-4" style="transform: translateY(-50%)">
+                <div class="input-group" style="width: 250px">
+                    <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        placeholder="Buscar en el sitio..."
+                    />
+                    <button class="btn btn-light btn-sm" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo y buscador para móvil -->
+        <div class="d-md-none">
+            <!-- Logo centrado -->
+            <div class="position-absolute top-0 start-50 translate-middle-x mt-3">
+                <img src="/assets/images/logo.svg" alt="ESADyC Logo" height="100" />
+            </div>
+
+            <!-- Buscador expandible -->
+            <div class="position-absolute top-100 start-50 translate-middle-x mt-4">
+                <div class="input-group input-group-sm">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Buscar en el sitio..."
+                        id="mobile-search-input"
+                        style="display: none;"
+                    />
+                    <button class="btn btn-light" type="button" id="mobile-search-toggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header con navegación -->
+    <header>
+        <nav
+            class="navbar navbar-expand-lg navbar-dark"
+            style="background-color: #0d6efd"
+        >
+            <div class="container">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto" style="gap: 2.5rem">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="/index.html">INICIO</a>
+                        </li>
+                        
+                        <!-- Institucional con submenú -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold fs-5" href="/frontend/institucional.html" role="button" data-bs-toggle="dropdown">
+                                INSTITUCIONAL
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/frontend/institucional/historia.html">HISTORIA</a></li>
+                                <li><a class="dropdown-item" href="/frontend/institucional/autoridades.html">AUTORIDADES</a></li>
+                                <li><a class="dropdown-item" href="/frontend/institucional/normativa.html">NORMATIVA</a></li>
+                                <li><a class="dropdown-item" href="/frontend/institucional/personal.html">PERSONAL</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Publicaciones con submenú -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold fs-5 active" href="/frontend/publicaciones.html" role="button" data-bs-toggle="dropdown">
+                                PUBLICACIONES
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/frontend/publicaciones/actividades.html">ACTIVIDADES</a></li>
+                                <li><a class="dropdown-item" href="/frontend/publicaciones/comunicacion-publica.html">COMUNICACIÓN PÚBLICA</a></li>
+                                <li><a class="dropdown-item active" href="/frontend/publicaciones/proyectos.html">PROYECTOS</a></li>
+                                <li><a class="dropdown-item" href="/frontend/publicaciones/personal.html">PERSONAL</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="/frontend/noticias.html">NOTICIAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="/frontend/programas.html">PROGRAMAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold fs-5" href="/frontend/contactos.html">CONTACTOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h1 class="fw-bold text-primary mb-3 pb-2 border-bottom border-3 border-primary d-inline-block">PROYECTOS DE INVESTIGACIÓN</h1>
+            </div>
+            
+            <!-- Introducción -->
+            <div class="col-12 mb-5">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-primary fw-bold mb-3">Investigación de Vanguardia</h3>
+                        <p class="text-muted mb-4">
+                            El ESADyC desarrolla proyectos de investigación en diversas áreas del conocimiento, 
+                            con el objetivo de generar nuevo conocimiento científico y tecnológico que contribuya 
+                            al desarrollo sostenible y al bienestar de la sociedad.
+                        </p>
+                        
+                        <div class="row text-center">
+                            <div class="col-md-3 mb-3">
+                                <div class="card border-primary h-100">
+                                    <div class="card-body">
+                                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                            <i class="fas fa-dna text-primary fs-3"></i>
+                                        </div>
+                                        <h5 class="text-primary fw-bold">Biotecnología</h5>
+                                        <p class="text-muted small">15 proyectos activos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 mb-3">
+                                <div class="card border-primary h-100">
+                                    <div class="card-body">
+                                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                            <i class="fas fa-leaf text-primary fs-3"></i>
+                                        </div>
+                                        <h5 class="text-primary fw-bold">Medio Ambiente</h5>
+                                        <p class="text-muted small">12 proyectos activos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 mb-3">
+                                <div class="card border-primary h-100">
+                                    <div class="card-body">
+                                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                            <i class="fas fa-microchip text-primary fs-3"></i>
+                                        </div>
+                                        <h5 class="text-primary fw-bold">Tecnología</h5>
+                                        <p class="text-muted small">10 proyectos activos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 mb-3">
+                                <div class="card border-primary h-100">
+                                    <div class="card-body">
+                                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                            <i class="fas fa-flask text-primary fs-3"></i>
+                                        </div>
+                                        <h5 class="text-primary fw-bold">Ciencias Básicas</h5>
+                                        <p class="text-muted small">8 proyectos activos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Proyectos Destacados -->
+            <div class="col-12 mb-4">
+                <h3 class="fw-bold text-primary mb-4">
+                    <i class="fas fa-star me-2"></i>Proyectos Destacados
+                </h3>
+            </div>
+            
+            <div class="col-12 mb-5">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span class="badge bg-primary mb-2">Biotecnología</span>
+                                <h4 class="text-primary fw-bold">Desarrollo de biosensores para detección temprana de enfermedades neurodegenerativas</h4>
+                                <p class="text-muted mb-3">
+                                    Este proyecto busca desarrollar biosensores basados en nanotecnología 
+                                    para la detección temprana de biomarcadores asociados a enfermedades 
+                                    neurodegenerativas como Alzheimer y Parkinson.
+                                </p>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <p class="mb-1"><strong>Investigador Principal:</strong> Dra. Laura Méndez</p>
+                                        <p class="mb-1"><strong>Duración:</strong> 2022-2025</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1"><strong>Financiamiento:</strong> CONICET - ANPCyT</p>
+                                        <p class="mb-1"><strong>Presupuesto:</strong> $4.500.000</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-secondary">Nanotecnología</span>
+                                    <span class="badge bg-secondary">Biomarcadores</span>
+                                    <span class="badge bg-secondary">Diagnóstico</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="bg-primary bg-opacity-10 rounded p-4 h-100 d-flex flex-column justify-content-center">
+                                    <i class="fas fa-dna text-primary fs-1 mb-3"></i>
+                                    <h5 class="text-primary fw-bold">Resultados Esperados</h5>
+                                    <p class="text-muted small">
+                                        Prototipo de biosensor validado y publicación de al menos 3 artículos 
+                                        en revistas de alto impacto.
+                                    </p>
+                                    <a href="#" class="btn btn-primary mt-2">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 mb-5">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span class="badge bg-success mb-2">Medio Ambiente</span>
+                                <h4 class="text-primary fw-bold">Evaluación del impacto del cambio climático en ecosistemas patagónicos</h4>
+                                <p class="text-muted mb-3">
+                                    Investigación interdisciplinaria para evaluar los efectos del cambio climático 
+                                    en la biodiversidad y funcionamiento de ecosistemas patagónicos, con énfasis 
+                                    en el desarrollo de estrategias de adaptación y mitigación.
+                                </p>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <p class="mb-1"><strong>Investigador Principal:</strong> Dr. Javier Ortega</p>
+                                        <p class="mb-1"><strong>Duración:</strong> 2021-2024</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1"><strong>Financiamiento:</strong> FONCyT - PNUD</p>
+                                        <p class="mb-1"><strong>Presupuesto:</strong> $3.800.000</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-secondary">Cambio Climático</span>
+                                    <span class="badge bg-secondary">Biodiversidad</span>
+                                    <span class="badge bg-secondary">Conservación</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="bg-success bg-opacity-10 rounded p-4 h-100 d-flex flex-column justify-content-center">
+                                    <i class="fas fa-leaf text-success fs-1 mb-3"></i>
+                                    <h5 class="text-success fw-bold">Resultados Esperados</h5>
+                                    <p class="text-muted small">
+                                        Modelos predictivos de cambios en biodiversidad y guías de manejo 
+                                        adaptativo para áreas protegidas.
+                                    </p>
+                                    <a href="#" class="btn btn-success mt-2">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lista de Proyectos -->
+            <div class="col-12 mb-4">
+                <h3 class="fw-bold text-primary mb-4">
+                    <i class="fas fa-list me-2"></i>Todos los Proyectos
+                </h3>
+            </div>
+            
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Nombre del Proyecto</th>
+                                        <th>Área</th>
+                                        <th>Investigador</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>P-2023-015</td>
+                                        <td>Desarrollo de materiales avanzados para captura de CO2</td>
+                                        <td><span class="badge bg-info">Tecnología</span></td>
+                                        <td>Dra. Carmen Ruiz</td>
+                                        <td><span class="badge bg-success">En ejecución</span></td>
+                                        <td>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">Detalles</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P-2023-012</td>
+                                        <td>Estudio de microorganismos extremófilos en ambientes andinos</td>
+                                        <td><span class="badge bg-primary">Biotecnología</span></td>
+                                        <td>Dr. Roberto González</td>
+                                        <td><span class="badge bg-success">En ejecución</span></td>
+                                        <td>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">Detalles</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P-2022-028</td>
+                                        <td>Implementación de sistemas de inteligencia artificial para monitoreo ambiental</td>
+                                        <td><span class="badge bg-info">Tecnología</span></td>
+                                        <td>Ing. Pablo Sánchez</td>
+                                        <td><span class="badge bg-warning">En revisión</span></td>
+                                        <td>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">Detalles</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P-2022-021</td>
+                                        <td>Caracterización de compuestos bioactivos en plantas nativas</td>
+                                        <td><span class="badge bg-primary">Biotecnología</span></td>
+                                        <td>Dra. Ana Martínez</td>
+                                        <td><span class="badge bg-success">En ejecución</span></td>
+                                        <td>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">Detalles</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P-2021-035</td>
+                                        <td>Restauración ecológica de humedales urbanos</td>
+                                        <td><span class="badge bg-success">Medio Ambiente</span></td>
+                                        <td>Dr. Jorge Fernández</td>
+                                        <td><span class="badge bg-secondary">Finalizado</span></td>
+                                        <td>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">Resultados</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Convocatorias Abiertas -->
+            <div class="col-12 mt-5">
+                <div class="card border-0 shadow-sm bg-light">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-primary fw-bold mb-3">Convocatorias Abiertas</h3>
+                        <p class="text-muted mb-4">
+                            Si estás interesado en presentar un proyecto de investigación, consulta nuestras 
+                            convocatorias abiertas y los requisitos para postulación.
+                        </p>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary fw-bold">Convocatoria Jóvenes Investigadores 2024</h5>
+                                        <p class="card-text text-muted">
+                                            Dirigida a investigadores menores de 35 años para el desarrollo 
+                                            de proyectos innovadores en áreas estratégicas.
+                                        </p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Cierre: 15 de Enero 2024</small>
+                                            <a href="#" class="btn btn-primary btn-sm">Postular</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary fw-bold">Fondo de Innovación Tecnológica</h5>
+                                        <p class="card-text text-muted">
+                                            Financiamiento para proyectos con potencial de transferencia 
+                                            tecnológica y desarrollo de prototipos.
+                                        </p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Cierre: 28 de Febrero 2024</small>
+                                            <a href="#" class="btn btn-primary btn-sm">Postular</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Columna INSTITUCIONAL -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-building me-2"></i>INSTITUCIONAL
+                    </h5>
+                    <p class="fw-bold mb-2 text-light">
+                        <i class="fas fa-info-circle me-2 text-secondary"></i>Acerca del ESADyC
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-user-tie me-2 text-muted"></i>
+                            <a href="/frontend/institucional/autoridades.html" class="text-light text-decoration-none">Autoridades</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-gavel me-2 text-muted"></i>
+                            <a href="/frontend/institucional/normativa.html" class="text-light text-decoration-none">Normativa</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-network-wired me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Red Institucional</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chart-bar me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Evaluación</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-user-md me-2 text-muted"></i>
+                            <a href="/frontend/institucional/personal.html" class="text-light text-decoration-none">Investigador/a</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-hands-helping me-2 text-muted"></i>
+                            <a href="/frontend/institucional/personal.html" class="text-light text-decoration-none">Personal de Apoyo</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-user-graduate me-2 text-muted"></i>
+                            <a href="/frontend/institucional/personal.html" class="text-light text-decoration-none">Becario/a</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-briefcase me-2 text-muted"></i>
+                            <a href="/frontend/institucional/personal.html" class="text-light text-decoration-none">Administrativo/a</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna DESARROLLO CYT -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-flask me-2"></i>DESARROLLO CYT
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-project-diagram me-2 text-muted"></i>
+                            <a href="/frontend/publicaciones/proyectos.html" class="text-light text-decoration-none">Proyectos I+D</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-tasks me-2 text-muted"></i>
+                            <a href="/frontend/publicaciones/actividades.html" class="text-light text-decoration-none">Actividades de apoyo a la I+D</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-handshake me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Convenios</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-file-alt me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Solicitud colecta científica</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-sitemap me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Redes Orientadas (RIOSP)</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-database me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Repositorios</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-users me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Redes Disciplinares</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-ship me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Bugues Oceanográficos</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna CONVOCATORIAS y PROGRAMAS -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-bullhorn me-2"></i>CONVOCATORIAS
+                    </h5>
+                    <h6 class="fw-bold mb-2 text-light">
+                        <i class="fas fa-link me-2 text-secondary"></i>VINCULACIÓN
+                    </h6>
+                    <h6 class="fw-bold mb-2 text-light">
+                        <i class="fas fa-globe-americas me-2 text-secondary"></i>COOPERACIÓN
+                    </h6>
+                    <h6 class="fw-bold mb-3 text-light border-bottom pb-2">
+                        <i class="fas fa-comments me-2 text-secondary"></i>COMUNICACIÓN
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="far fa-newspaper me-2 text-muted"></i>
+                            <a href="/frontend/noticias.html" class="text-light text-decoration-none">Noticias</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-bell me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Novedades</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-film me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">ESADyC Documental</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-trophy me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Premios científicos</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-calendar-alt me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Agenda ESADyC</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-video me-2 text-muted"></i>
+                            <a href="/frontend/publicaciones/comunicacion-publica.html" class="text-light text-decoration-none">Audiovisual</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-lightbulb me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Iniciativas</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-heart me-2 text-muted"></i>
+                            <a href="#" class="text-light text-decoration-none">Ciencia en tu vida</a>
+                        </li>
+                    </ul>
+                    
+                    <h5 class="fw-bold mt-4 mb-3 text-primary border-bottom pb-2">
+                        <i class="fas fa-list-alt me-2"></i>PROGRAMAS
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-balance-scale me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">Ciencia y Justicia</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-microphone me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">VocAr</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chalkboard-teacher me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">Programa +VALOR.Doc</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-history me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">Comisión de la Memoria</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-water me-2 text-muted"></i>
+                            <a href="/frontend/programas.html" class="text-light text-decoration-none">Comisión de Ciencias del Mar</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Columna de contacto -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="bg-dark bg-opacity-50 p-4 rounded border border-secondary">
+                        <h6 class="fw-bold text-primary mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>CONTACTO
+                        </h6>
+                        <p class="mb-3 small">
+                            <i class="fas fa-university me-2 text-muted"></i>
+                            Seide GIOLL: Godoy Cruz 2290 (C1425FOB) CABA – República Argentina
+                        </p>
+                        <p class="mb-3 fw-bold text-light">
+                            <i class="fas fa-envelope me-2 text-muted"></i>
+                            infoesadyc@gmail.com
+                        </p>
+
+                        <!-- Iconos de redes sociales -->
+                        <div class="mt-4 pt-3 border-top border-secondary">
+                            <h6 class="fw-bold text-light mb-3">SÍGUENOS</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="text-primary fs-5">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="text-info fs-5">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="text-danger fs-5">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="text-primary fs-5">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-warning fs-5">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Línea divisoria -->
+            <hr class="my-4 border-secondary">
+            
+            <!-- Información de licencia con iconos -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-3 bg-dark bg-opacity-25 rounded border border-secondary text-center">
+                        <p class="mb-0 small">
+                            <i class="fab fa-creative-commons me-2 text-primary"></i>
+                            <strong>Los contenidos del ESADyC están licenciados bajo Creative Commons Reconocimiento 2.5 Argentina License</strong>
+                            <i class="fab fa-creative-commons-by ms-2 text-primary"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para el buscador móvil
+        document.getElementById('mobile-search-toggle').addEventListener('click', function() {
+            const searchInput = document.getElementById('mobile-search-input');
+            if (searchInput.style.display === 'none') {
+                searchInput.style.display = 'block';
+                searchInput.focus();
+            } else {
+                searchInput.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
